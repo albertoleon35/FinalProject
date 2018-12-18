@@ -75,6 +75,39 @@ class SQLLiteHelper  {
         return nil
     }
     
+    public func getPlatformUserByUserId(statement: String) -> [PlatformUserDTO] {
+        
+        guard let dbConnection = openConnectionDatabase() else {
+            return [PlatformUserDTO]()
+        }
+        
+        var platformUsers = [PlatformUserDTO]()
+        
+        do {
+            for row in try dbConnection.prepare(statement) {
+                let optionalCount : Int64 = Optional(row[0]) as! Int64
+                let userId = Int(optionalCount)
+                
+                let gamerTag1 : String = Optional(row[1]) as! String
+                let gamerTag = String(gamerTag1)
+                
+                let platform1: String = Optional(row[2]) as! String
+                let platform: String = String(platform1)
+                
+                let user = PlatformUserDTO(userId: userId, gamerTag: gamerTag, platform: platform)
+                platformUsers.append(user)
+            }
+
+            return platformUsers
+            
+        } catch {
+            print("Unexpected error: \(error).")
+        }
+        return [PlatformUserDTO]()
+    }
+    
+    
+    
     fileprivate func openConnectionDatabase() -> Connection? {
         do {
             let path = "/Users/albertoleon/Documents/"

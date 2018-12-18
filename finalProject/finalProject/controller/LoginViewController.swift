@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
     
     var loginSuccess = false
     let toAddPlayersFromLoginController = "toAddPlayersFromLoginController"
+    let unwindToLoginControllerFromPlayerStatisticsController = "unwindToLoginControllerFromPlayerStatisticsController"
+    let unwindToLoginPageFromRegisterController = "unwindToLoginPageFromRegisterController"
     var user: UserDTO?
     
     override func viewDidLoad() {
@@ -25,7 +27,17 @@ class LoginViewController: UIViewController {
         
     }
     
-    @IBAction func unwindToLoginController(segue:UIStoryboardSegue) { }
+    @IBAction func unwindToLoginController(segue:UIStoryboardSegue) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        if (identifier == unwindToLoginControllerFromPlayerStatisticsController || identifier == unwindToLoginPageFromRegisterController) {
+            userNameTextBox.text = ""
+            passwordTextBox.text = ""
+        }
+        
+    }
     
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
         

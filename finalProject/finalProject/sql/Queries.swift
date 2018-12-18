@@ -26,4 +26,8 @@ class Queries {
         return "SELECT userId, userName, password, email FROM user WHERE userName = \"\(userName)\" AND password = \"\(password)\";"
     }
     
+    public func getFollowedUserByUserId(userId: Int) -> String {
+        return "SELECT userId, gamerTag, Platform FROM 'platformUser' WHERE userId = \"\(userId)\";"
+    }
+    
 }

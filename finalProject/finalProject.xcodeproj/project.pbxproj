@@ -13,6 +13,8 @@
 		7A0C3CED21C6DC9500ECA80F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C3CEC21C6DC9500ECA80F /* RegisterViewController.swift */; };
 		7A0C3CEF21C7277000ECA80F /* SqlLiteMessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C3CEE21C7277000ECA80F /* SqlLiteMessageDTO.swift */; };
 		7A0C3CF121C759F900ECA80F /* PlayerStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C3CF021C759F900ECA80F /* PlayerStatisticsViewController.swift */; };
+		7A4FB03721C8A7F50086888D /* PlatformUserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FB03621C8A7F50086888D /* PlatformUserDTO.swift */; };
+		7A4FB03921C8BA4E0086888D /* DetailedPlayerStatisticsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FB03821C8BA4E0086888D /* DetailedPlayerStatisticsCollectionViewController.swift */; };
 		7A98987C21C583B30041AF75 /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A98987B21C583B30041AF75 /* ApplicationConstants.swift */; };
 		7A98987E21C586D50041AF75 /* PlatformDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A98987D21C586D50041AF75 /* PlatformDictionary.swift */; };
 		7A98988321C58A4E0041AF75 /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A98988221C58A4E0041AF75 /* Queries.swift */; };
@@ -55,6 +57,8 @@
 		7A0C3CEC21C6DC9500ECA80F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7A0C3CEE21C7277000ECA80F /* SqlLiteMessageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlLiteMessageDTO.swift; sourceTree = "<group>"; };
 		7A0C3CF021C759F900ECA80F /* PlayerStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsViewController.swift; sourceTree = "<group>"; };
+		7A4FB03621C8A7F50086888D /* PlatformUserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformUserDTO.swift; sourceTree = "<group>"; };
+		7A4FB03821C8BA4E0086888D /* DetailedPlayerStatisticsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPlayerStatisticsCollectionViewController.swift; sourceTree = "<group>"; };
 		7A98987B21C583B30041AF75 /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
 		7A98987D21C586D50041AF75 /* PlatformDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDictionary.swift; sourceTree = "<group>"; };
 		7A98988221C58A4E0041AF75 /* Queries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queries.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 			children = (
 				7A0C3CEA21C5E7A100ECA80F /* UserDTO.swift */,
 				7A0C3CEE21C7277000ECA80F /* SqlLiteMessageDTO.swift */,
+				7A4FB03621C8A7F50086888D /* PlatformUserDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				7A98DC2921BF6D2D0040723D /* LoginViewController.swift */,
 				7A0C3CEC21C6DC9500ECA80F /* RegisterViewController.swift */,
 				7A0C3CF021C759F900ECA80F /* PlayerStatisticsViewController.swift */,
+				7A4FB03821C8BA4E0086888D /* DetailedPlayerStatisticsCollectionViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -447,7 +453,9 @@
 				7A98DC2821BF6D2D0040723D /* AppDelegate.swift in Sources */,
 				7A0C3CED21C6DC9500ECA80F /* RegisterViewController.swift in Sources */,
 				7A98988321C58A4E0041AF75 /* Queries.swift in Sources */,
+				7A4FB03721C8A7F50086888D /* PlatformUserDTO.swift in Sources */,
 				7A98988521C593980041AF75 /* SQLLiteHelper.swift in Sources */,
+				7A4FB03921C8BA4E0086888D /* DetailedPlayerStatisticsCollectionViewController.swift in Sources */,
 				7A0C3CF121C759F900ECA80F /* PlayerStatisticsViewController.swift in Sources */,
 				7A0C3CEB21C5E7A100ECA80F /* UserDTO.swift in Sources */,
 				7A98987C21C583B30041AF75 /* ApplicationConstants.swift in Sources */,

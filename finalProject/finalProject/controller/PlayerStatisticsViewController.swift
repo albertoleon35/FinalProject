@@ -15,13 +15,14 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var followedUsersPicker: UIPickerView!
     
     let platform = ["Playstation 4", "Xbox", "PC"]
-    let users = ["albertoleon325"]
+    var followedUsers = [PlatformUserDTO]()
     
     var currentUser: UserDTO?
     var playerPlatform: String = "Playstation 4"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        retrievePlayersFollowByUser()
         setupPickers();
     }
     
@@ -34,10 +35,21 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
             return
         }
         
-
         let insertQuery = Queries().insertFollowedUserQuery(userId: "\(currentUser.userId)", gamerTag: gamerTag, platform: playerPlatform)
         
         let success = SQLLiteHelper().runInsertStatement(statement: insertQuery)
+        
+        if success.success {
+            
+            guard let userId = self.currentUser?.userId else {
+                return
+            }
+            
+            let query = Queries().getFollowedUserByUserId(userId: userId)
+            self.followedUsers = SQLLiteHelper().getPlatformUserByUserId(statement: query)
+            followedUsersPicker.reloadAllComponents()
+            self.gamerIDTextBox.text = ""
+        }
         
     }
     
@@ -49,7 +61,7 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
         if pickerView == platformPicker {
             return platform.count
         } else if pickerView == followedUsersPicker {
-            return users.count
+            return followedUsers.count
         }
         return 0
 
@@ -59,7 +71,11 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
         if pickerView == platformPicker {
             return platform[row]
         } else if pickerView == followedUsersPicker {
-            return users[row]
+            
+            if followedUsers.count > 0 {
+                return "\(followedUsers[row].gamerTag), \(followedUsers[row].platform)"
+            }
+            return ""
         }
         
         return ""
@@ -78,6 +94,14 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
                 self.playerPlatform = platform[0]
             }
         }
+    }
+    
+    fileprivate func retrievePlayersFollowByUser() {
+        guard let user = currentUser else {
+            return
+        }
+        let query = Queries().getFollowedUserByUserId(userId: user.userId)
+        self.followedUsers = SQLLiteHelper().getPlatformUserByUserId(statement: query)
     }
     
     fileprivate func setupPickers() {
