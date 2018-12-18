@@ -72,18 +72,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player stats tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39T-d5-qXB">
+                                <rect key="frame" x="104" y="20" width="166" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="knl-Iz-nzg" firstAttribute="leading" secondItem="8Sf-jL-voP" secondAttribute="leading" id="0vj-yt-ssG"/>
+                            <constraint firstItem="39T-d5-qXB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="23F-pW-BSs"/>
                             <constraint firstItem="8Sf-jL-voP" firstAttribute="trailing" secondItem="pgV-b8-iCV" secondAttribute="trailing" id="5rU-ih-Sgl"/>
                             <constraint firstItem="knl-Iz-nzg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="CXh-DG-KYf"/>
                             <constraint firstItem="vgM-C3-adk" firstAttribute="top" secondItem="8Sf-jL-voP" secondAttribute="bottom" constant="8" symbolic="YES" id="Mof-Wx-Wfe"/>
+                            <constraint firstItem="39T-d5-qXB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="104" id="RDs-Te-aBV"/>
                             <constraint firstItem="TVk-Ip-Jmp" firstAttribute="top" secondItem="UqL-Or-hNB" secondAttribute="top" id="Smv-1e-hlH"/>
                             <constraint firstItem="vgM-C3-adk" firstAttribute="leading" secondItem="pgV-b8-iCV" secondAttribute="leading" id="a5c-Y3-fPB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Sf-jL-voP" secondAttribute="trailing" constant="63" id="bAb-Tq-mxN"/>
                             <constraint firstItem="8Sf-jL-voP" firstAttribute="top" secondItem="knl-Iz-nzg" secondAttribute="bottom" constant="8" symbolic="YES" id="bcT-Pp-Utl"/>
                             <constraint firstItem="8Sf-jL-voP" firstAttribute="leading" secondItem="vgM-C3-adk" secondAttribute="leading" id="ecs-Vk-75V"/>
+                            <constraint firstItem="39T-d5-qXB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="i3g-9v-LT0"/>
                             <constraint firstItem="pgV-b8-iCV" firstAttribute="top" secondItem="vgM-C3-adk" secondAttribute="bottom" constant="8" symbolic="YES" id="i71-f2-nRk"/>
                             <constraint firstItem="UqL-Or-hNB" firstAttribute="baseline" secondItem="TVk-Ip-Jmp" secondAttribute="firstBaseline" id="l19-0A-bue"/>
                             <constraint firstItem="UqL-Or-hNB" firstAttribute="trailing" secondItem="pgV-b8-iCV" secondAttribute="trailing" constant="47" id="qiG-rX-w20"/>
@@ -96,7 +104,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="UqL-Or-hNB" id="qyN-De-Fy4"/>
                         <outlet property="passwordTextBox" destination="pgV-b8-iCV" id="YLU-E2-36I"/>
+                        <outlet property="registerButton" destination="TVk-Ip-Jmp" id="OY0-4g-moK"/>
                         <outlet property="userNameTextBox" destination="8Sf-jL-voP" id="ile-mN-vlF"/>
                     </connections>
                 </viewController>
@@ -212,7 +222,9 @@
                     </view>
                     <connections>
                         <outlet property="emailAddressTextbox" destination="nmI-wG-bDP" id="MWP-k2-19Y"/>
+                        <outlet property="loginPageButton" destination="GNO-qc-FXd" id="Djv-1m-6jM"/>
                         <outlet property="passwordTextBox" destination="Soz-GZ-0zu" id="meb-u4-tqO"/>
+                        <outlet property="registerButton" destination="Zhb-m5-c8S" id="6al-ji-2Kf"/>
                         <outlet property="userNameTextBox" destination="0Wf-kX-wTi" id="ePU-DB-2jQ"/>
                         <segue destination="F2h-Ee-2SQ" kind="show" identifier="toAddPlayersFromRegisterController" id="I8l-cI-cxu"/>
                     </connections>
@@ -222,23 +234,23 @@
             </objects>
             <point key="canvasLocation" x="-298.39999999999998" y="844.22788605697156"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Detailed Player Statistics Collection View Controller-->
         <scene sceneID="BPt-fs-b9H">
             <objects>
-                <collectionViewController id="DFd-IT-hdq" sceneMemberID="viewController">
+                <collectionViewController id="DFd-IT-hdq" customClass="DetailedPlayerStatisticsCollectionViewController" customModule="finalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" id="oPb-o5-Hya">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="72Q-Tu-BHo">
                             <size key="itemSize" width="209" height="145"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="62"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uIp-gK-Olf">
-                                <rect key="frame" x="57.5" y="70" width="260" height="150"/>
+                                <rect key="frame" x="57.5" y="82" width="260" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="260" height="150"/>
@@ -247,29 +259,49 @@
                                 <size key="customSize" width="260" height="150"/>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="playerHeader" id="qYK-Fn-2gp">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailedStatisticsHeader" id="qYK-Fn-2gp">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKe-IB-bYP">
-                                    <rect key="frame" x="8" y="13" width="136" height="24"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afc-Tv-K7G">
+                                    <rect key="frame" x="206" y="18" width="161" height="36"/>
+                                    <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="Back to add player">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <segue destination="YVZ-mn-cCT" kind="unwind" unwindAction="unwindToPlayerStatisticsWithSegue:" id="Dzt-QR-Lf9"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKe-IB-bYP">
+                                    <rect key="frame" x="8" y="24" width="136" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="OKe-IB-bYP" firstAttribute="leading" secondItem="qYK-Fn-2gp" secondAttribute="leading" constant="8" id="duh-bw-1Oc"/>
+                                <constraint firstItem="OKe-IB-bYP" firstAttribute="top" secondItem="qYK-Fn-2gp" secondAttribute="top" constant="24" id="peK-y8-Bxz"/>
+                                <constraint firstItem="Afc-Tv-K7G" firstAttribute="top" secondItem="qYK-Fn-2gp" secondAttribute="topMargin" constant="-2" id="vAc-Ud-yLr"/>
+                                <constraint firstItem="Afc-Tv-K7G" firstAttribute="leading" secondItem="OKe-IB-bYP" secondAttribute="trailing" constant="62" id="zIF-MF-wUc"/>
+                            </constraints>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="DFd-IT-hdq" id="FEF-2C-Obz"/>
                             <outlet property="delegate" destination="DFd-IT-hdq" id="mGh-RZ-Ucq"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="collectionView" destination="oPb-o5-Hya" id="KcR-B6-j52"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3F-je-FoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="YVZ-mn-cCT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1841" y="547"/>
+            <point key="canvasLocation" x="1840.8" y="546.47676161919048"/>
         </scene>
         <!--Player Statistics View Controller-->
         <scene sceneID="8ru-vl-T9Z">
@@ -397,9 +429,12 @@
                         <viewLayoutGuide key="safeArea" id="66I-Vm-LUv"/>
                     </view>
                     <connections>
+                        <outlet property="followPlayerButton" destination="hti-dN-sSv" id="jhD-O1-hcX"/>
                         <outlet property="followedUsersPicker" destination="nei-lr-KPb" id="Vew-4O-xmY"/>
                         <outlet property="gamerIDTextBox" destination="2OC-CX-JXr" id="IQs-ba-fKL"/>
+                        <outlet property="logoutButton" destination="dcS-oj-Osj" id="tDS-2j-UfR"/>
                         <outlet property="platformPicker" destination="2m4-ry-Gyy" id="4gI-Ty-vDH"/>
+                        <outlet property="showStatsButton" destination="xNv-UQ-plK" id="nWb-ri-UUj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Vj-34-sER" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -409,6 +444,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="I8l-cI-cxu"/>
+        <segue reference="cOd-CM-vO9"/>
     </inferredMetricsTieBreakers>
 </document>

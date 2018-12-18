@@ -13,6 +13,11 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var gamerIDTextBox: UITextField!
     @IBOutlet weak var platformPicker: UIPickerView!
     @IBOutlet weak var followedUsersPicker: UIPickerView!
+
+    
+    @IBOutlet weak var followPlayerButton: UIButton!
+    @IBOutlet weak var showStatsButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     let platform = ["Playstation 4", "Xbox", "PC"]
     var followedUsers = [PlatformUserDTO]()
@@ -22,9 +27,18 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addShadeToWidget(widget: gamerIDTextBox)
+        addShadesToPickers(widget: platformPicker)
+        addShadesToPickers(widget: followedUsersPicker)
+        addShadeToWidget(widget: followPlayerButton)
+        addShadeToWidget(widget: showStatsButton)
+        addShadeToWidget(widget: logoutButton)
+        
         retrievePlayersFollowByUser()
         setupPickers();
     }
+    
+    @IBAction func unwindToPlayerStatistics(segue:UIStoryboardSegue) {}
     
     @IBAction func followPlayerButtonPressed(_ sender: Any) {
         guard let currentUser = self.currentUser else {
@@ -112,7 +126,23 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
         self.followedUsersPicker.dataSource = self
     
     }
-
+    
+    fileprivate func addShadesToPickers(widget: UIPickerView) {
+       widget.layer.shadowColor = UIColor.black.cgColor
+       widget.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+       widget.layer.shadowRadius = 2.0
+       widget.layer.shadowOpacity = 0.5
+       widget.layer.masksToBounds = false
+    }
+    
+    fileprivate func addShadeToWidget(widget: UIControl) {
+        widget.layer.shadowColor = UIColor.black.cgColor
+        widget.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        widget.layer.shadowRadius = 2.0
+        widget.layer.shadowOpacity = 0.5
+        widget.layer.masksToBounds = false
+    }
+    
     /*
     // MARK: - Navigation
 

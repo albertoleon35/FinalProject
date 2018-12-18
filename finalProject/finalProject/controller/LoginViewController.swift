@@ -12,6 +12,8 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var userNameTextBox: UITextField!
     @IBOutlet weak var passwordTextBox: UITextField!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     
     var loginSuccess = false
     let toAddPlayersFromLoginController = "toAddPlayersFromLoginController"
@@ -21,6 +23,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addShadeToWidget(widget: userNameTextBox)
+        addShadeToWidget(widget: passwordTextBox)
+        addShadeToWidget(widget: registerButton)
+        addShadeToWidget(widget: loginButton)
         // Do any additional setup after loading the view, typically from a nib.
         SQLLiteHelper().runStatement(statement: Queries().createUserTableQuery)
         SQLLiteHelper().runStatement(statement: Queries().createplatformUserQuery)
@@ -78,6 +84,13 @@ class LoginViewController: UIViewController {
         loginSuccess = true
     }
     
+    fileprivate func addShadeToWidget(widget: UIControl) {
+        widget.layer.shadowColor = UIColor.black.cgColor
+        widget.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        widget.layer.shadowRadius = 2.0
+        widget.layer.shadowOpacity = 0.5
+        widget.layer.masksToBounds = false
+    }
     fileprivate func displayAlert(messageAlert: String) {
         let alert = UIAlertController(title: "\(messageAlert)", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))

@@ -15,6 +15,8 @@
 		7A0C3CF121C759F900ECA80F /* PlayerStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C3CF021C759F900ECA80F /* PlayerStatisticsViewController.swift */; };
 		7A4FB03721C8A7F50086888D /* PlatformUserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FB03621C8A7F50086888D /* PlatformUserDTO.swift */; };
 		7A4FB03921C8BA4E0086888D /* DetailedPlayerStatisticsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FB03821C8BA4E0086888D /* DetailedPlayerStatisticsCollectionViewController.swift */; };
+		7A4FB03D21C8BCFD0086888D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FB03B21C8BCFD0086888D /* CollectionViewCell.swift */; };
+		7A4FB03E21C8BCFD0086888D /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A4FB03C21C8BCFD0086888D /* CollectionViewCell.xib */; };
 		7A98987C21C583B30041AF75 /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A98987B21C583B30041AF75 /* ApplicationConstants.swift */; };
 		7A98987E21C586D50041AF75 /* PlatformDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A98987D21C586D50041AF75 /* PlatformDictionary.swift */; };
 		7A98988321C58A4E0041AF75 /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A98988221C58A4E0041AF75 /* Queries.swift */; };
@@ -59,6 +61,8 @@
 		7A0C3CF021C759F900ECA80F /* PlayerStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsViewController.swift; sourceTree = "<group>"; };
 		7A4FB03621C8A7F50086888D /* PlatformUserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformUserDTO.swift; sourceTree = "<group>"; };
 		7A4FB03821C8BA4E0086888D /* DetailedPlayerStatisticsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPlayerStatisticsCollectionViewController.swift; sourceTree = "<group>"; };
+		7A4FB03B21C8BCFD0086888D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		7A4FB03C21C8BCFD0086888D /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		7A98987B21C583B30041AF75 /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
 		7A98987D21C586D50041AF75 /* PlatformDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDictionary.swift; sourceTree = "<group>"; };
 		7A98988221C58A4E0041AF75 /* Queries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queries.swift; sourceTree = "<group>"; };
@@ -117,6 +121,15 @@
 				7A4FB03621C8A7F50086888D /* PlatformUserDTO.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		7A4FB03A21C8BCD00086888D /* subController */ = {
+			isa = PBXGroup;
+			children = (
+				7A4FB03B21C8BCFD0086888D /* CollectionViewCell.swift */,
+				7A4FB03C21C8BCFD0086888D /* CollectionViewCell.xib */,
+			);
+			path = subController;
 			sourceTree = "<group>";
 		};
 		7A98988121C58A290041AF75 /* sql */ = {
@@ -188,6 +201,7 @@
 		7AFEE19B21BF73ED00D6EFA0 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				7A4FB03A21C8BCD00086888D /* subController */,
 				7A98DC2921BF6D2D0040723D /* LoginViewController.swift */,
 				7A0C3CEC21C6DC9500ECA80F /* RegisterViewController.swift */,
 				7A0C3CF021C759F900ECA80F /* PlayerStatisticsViewController.swift */,
@@ -329,6 +343,7 @@
 			files = (
 				7A98DC3221BF6D2D0040723D /* LaunchScreen.storyboard in Resources */,
 				7A98DC2F21BF6D2D0040723D /* Assets.xcassets in Resources */,
+				7A4FB03E21C8BCFD0086888D /* CollectionViewCell.xib in Resources */,
 				7A98DC2D21BF6D2D0040723D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +470,7 @@
 				7A98988321C58A4E0041AF75 /* Queries.swift in Sources */,
 				7A4FB03721C8A7F50086888D /* PlatformUserDTO.swift in Sources */,
 				7A98988521C593980041AF75 /* SQLLiteHelper.swift in Sources */,
+				7A4FB03D21C8BCFD0086888D /* CollectionViewCell.swift in Sources */,
 				7A4FB03921C8BA4E0086888D /* DetailedPlayerStatisticsCollectionViewController.swift in Sources */,
 				7A0C3CF121C759F900ECA80F /* PlayerStatisticsViewController.swift in Sources */,
 				7A0C3CEB21C5E7A100ECA80F /* UserDTO.swift in Sources */,

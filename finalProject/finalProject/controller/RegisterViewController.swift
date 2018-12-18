@@ -13,6 +13,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailAddressTextbox: UITextField!
     @IBOutlet weak var userNameTextBox: UITextField!
     @IBOutlet weak var passwordTextBox: UITextField!
+    @IBOutlet weak var loginPageButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     
     var registerSuccess = false
     var user: UserDTO?
@@ -21,6 +23,11 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addShadeToWidget(widget: self.emailAddressTextbox)
+        addShadeToWidget(widget: self.userNameTextBox)
+        addShadeToWidget(widget: self.passwordTextBox)
+        addShadeToWidget(widget: self.loginPageButton)
+        addShadeToWidget(widget: self.registerButton)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
@@ -86,6 +93,14 @@ class RegisterViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         
         self.present(alert, animated: true)
+    }
+    
+    fileprivate func addShadeToWidget(widget: UIControl) {
+        widget.layer.shadowColor = UIColor.black.cgColor
+        widget.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        widget.layer.shadowRadius = 2.0
+        widget.layer.shadowOpacity = 0.5
+        widget.layer.masksToBounds = false
     }
     
 }

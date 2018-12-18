@@ -8,31 +8,36 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class DetailedPlayerStatisticsCollectionViewController: UICollectionViewController {
 
+    private let detailedStatisticsHeader = "detailedStatisticsHeader"
+    private let detailedStatistics = "detailedStatistics"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: self.detailedStatistics)
 
         // Do any additional setup after loading the view.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.detailedStatisticsHeader, for: indexPath)
+        
+        //        header.backgroundColor = .green
+        header.layer.shadowColor = UIColor.black.cgColor
+        header.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        header.layer.shadowRadius = 2.0
+        header.layer.shadowOpacity = 0.5
+        header.layer.masksToBounds = false
+        
+        return header
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -48,10 +53,15 @@ class DetailedPlayerStatisticsCollectionViewController: UICollectionViewControll
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.detailedStatistics, for: indexPath) as! CollectionViewCell
+        
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowOpacity = 0.5
+        cell.layer.masksToBounds = false
+        
+        //        cell.configure(with: claimCell)
         return cell
     }
 
