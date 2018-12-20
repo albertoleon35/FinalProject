@@ -13,7 +13,6 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var gamerIDTextBox: UITextField!
     @IBOutlet weak var platformPicker: UIPickerView!
     @IBOutlet weak var followedUsersPicker: UIPickerView!
-    @IBOutlet weak var actvityIndicator: UIActivityIndicatorView!
     
     
     @IBOutlet weak var followPlayerButton: UIButton!
@@ -59,7 +58,7 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
             if let detailedPlayerStatsController = segue.destination as? DetailedPlayerStatisticsCollectionViewController {
                 detailedPlayerStatsController.currentUser = self.currentUser
                 detailedPlayerStatsController.followedUsers = self.followedUsers
-                self.actvityIndicator.stopAnimating()
+                
             }
         }
      }
@@ -67,7 +66,6 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
     @IBAction func unwindToPlayerStatistics(segue:UIStoryboardSegue) {}
     
     @IBAction func showStatsButtonPressed(_ sender: Any) {
-        actvityIndicator.startAnimating()
         guard self.followedUsers.count > 0 else {
             self.displayAlert(messageAlert: "Please follow at least one gamer")
             return
