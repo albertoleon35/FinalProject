@@ -13,6 +13,8 @@ class PlatformUserDTO {
     let userId: Int
     let gamerTag: String
     let platform: String
+    var callOfDuty: CallOfDuty?
+    var errorMessage: ErrorMessage?
     
     init(userId: Int, gamerTag: String, platform: String) {
         self.userId = userId

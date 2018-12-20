@@ -91,6 +91,7 @@ class LoginViewController: UIViewController {
         widget.layer.shadowOpacity = 0.5
         widget.layer.masksToBounds = false
     }
+    
     fileprivate func displayAlert(messageAlert: String) {
         let alert = UIAlertController(title: "\(messageAlert)", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))

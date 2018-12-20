@@ -13,6 +13,8 @@
 		7A0C3CED21C6DC9500ECA80F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C3CEC21C6DC9500ECA80F /* RegisterViewController.swift */; };
 		7A0C3CEF21C7277000ECA80F /* SqlLiteMessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C3CEE21C7277000ECA80F /* SqlLiteMessageDTO.swift */; };
 		7A0C3CF121C759F900ECA80F /* PlayerStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C3CF021C759F900ECA80F /* PlayerStatisticsViewController.swift */; };
+		7A2EFD6D21CB2DE700A110D0 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EFD6C21CB2DE700A110D0 /* ErrorMessage.swift */; };
+		7A2EFD6F21CB2E0400A110D0 /* ExternalModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EFD6E21CB2E0400A110D0 /* ExternalModelWrapper.swift */; };
 		7A4FB03721C8A7F50086888D /* PlatformUserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FB03621C8A7F50086888D /* PlatformUserDTO.swift */; };
 		7A4FB03921C8BA4E0086888D /* DetailedPlayerStatisticsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FB03821C8BA4E0086888D /* DetailedPlayerStatisticsCollectionViewController.swift */; };
 		7A4FB03D21C8BCFD0086888D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FB03B21C8BCFD0086888D /* CollectionViewCell.swift */; };
@@ -28,6 +30,8 @@
 		7A98DC3221BF6D2D0040723D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A98DC3021BF6D2D0040723D /* LaunchScreen.storyboard */; };
 		7A98DC3D21BF6D2D0040723D /* finalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A98DC3C21BF6D2D0040723D /* finalProjectTests.swift */; };
 		7A98DC4821BF6D2D0040723D /* finalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A98DC4721BF6D2D0040723D /* finalProjectUITests.swift */; };
+		7AACF98721CA019F00F7B38D /* CallOfDutyExternalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AACF98621CA019F00F7B38D /* CallOfDutyExternalModel.swift */; };
+		7AACF98A21CA050D00F7B38D /* Gateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AACF98921CA050D00F7B38D /* Gateway.swift */; };
 		8A5948932CC97ABF280DB0C5 /* Pods_finalProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD16CCC0AA70B83FB2EF57F1 /* Pods_finalProjectUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +63,8 @@
 		7A0C3CEC21C6DC9500ECA80F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7A0C3CEE21C7277000ECA80F /* SqlLiteMessageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlLiteMessageDTO.swift; sourceTree = "<group>"; };
 		7A0C3CF021C759F900ECA80F /* PlayerStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsViewController.swift; sourceTree = "<group>"; };
+		7A2EFD6C21CB2DE700A110D0 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		7A2EFD6E21CB2E0400A110D0 /* ExternalModelWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalModelWrapper.swift; sourceTree = "<group>"; };
 		7A4FB03621C8A7F50086888D /* PlatformUserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformUserDTO.swift; sourceTree = "<group>"; };
 		7A4FB03821C8BA4E0086888D /* DetailedPlayerStatisticsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPlayerStatisticsCollectionViewController.swift; sourceTree = "<group>"; };
 		7A4FB03B21C8BCFD0086888D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -80,6 +86,8 @@
 		7A98DC4321BF6D2D0040723D /* finalProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = finalProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A98DC4721BF6D2D0040723D /* finalProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalProjectUITests.swift; sourceTree = "<group>"; };
 		7A98DC4921BF6D2D0040723D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AACF98621CA019F00F7B38D /* CallOfDutyExternalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallOfDutyExternalModel.swift; sourceTree = "<group>"; };
+		7AACF98921CA050D00F7B38D /* Gateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gateway.swift; sourceTree = "<group>"; };
 		87E8F89FCF97572C13CE4679 /* Pods-finalProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-finalProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-finalProjectUITests/Pods-finalProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3F2CE8A34F15C336493B3FB /* Pods_finalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_finalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD16CCC0AA70B83FB2EF57F1 /* Pods_finalProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_finalProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +174,8 @@
 		7A98DC2621BF6D2D0040723D /* finalProject */ = {
 			isa = PBXGroup;
 			children = (
+				7AACF98821CA04D500F7B38D /* gateway */,
+				7AACF98521CA015400F7B38D /* externalModel */,
 				7A0C3CE921C5E79000ECA80F /* DTO */,
 				7A98988121C58A290041AF75 /* sql */,
 				7AFEE19B21BF73ED00D6EFA0 /* controller */,
@@ -196,6 +206,24 @@
 				7A98DC4921BF6D2D0040723D /* Info.plist */,
 			);
 			path = finalProjectUITests;
+			sourceTree = "<group>";
+		};
+		7AACF98521CA015400F7B38D /* externalModel */ = {
+			isa = PBXGroup;
+			children = (
+				7AACF98621CA019F00F7B38D /* CallOfDutyExternalModel.swift */,
+				7A2EFD6C21CB2DE700A110D0 /* ErrorMessage.swift */,
+				7A2EFD6E21CB2E0400A110D0 /* ExternalModelWrapper.swift */,
+			);
+			path = externalModel;
+			sourceTree = "<group>";
+		};
+		7AACF98821CA04D500F7B38D /* gateway */ = {
+			isa = PBXGroup;
+			children = (
+				7AACF98921CA050D00F7B38D /* Gateway.swift */,
+			);
+			path = gateway;
 			sourceTree = "<group>";
 		};
 		7AFEE19B21BF73ED00D6EFA0 /* controller */ = {
@@ -463,15 +491,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A98987E21C586D50041AF75 /* PlatformDictionary.swift in Sources */,
+				7AACF98721CA019F00F7B38D /* CallOfDutyExternalModel.swift in Sources */,
 				7A98DC2A21BF6D2D0040723D /* LoginViewController.swift in Sources */,
 				7A0C3CEF21C7277000ECA80F /* SqlLiteMessageDTO.swift in Sources */,
+				7AACF98A21CA050D00F7B38D /* Gateway.swift in Sources */,
 				7A98DC2821BF6D2D0040723D /* AppDelegate.swift in Sources */,
 				7A0C3CED21C6DC9500ECA80F /* RegisterViewController.swift in Sources */,
 				7A98988321C58A4E0041AF75 /* Queries.swift in Sources */,
 				7A4FB03721C8A7F50086888D /* PlatformUserDTO.swift in Sources */,
 				7A98988521C593980041AF75 /* SQLLiteHelper.swift in Sources */,
 				7A4FB03D21C8BCFD0086888D /* CollectionViewCell.swift in Sources */,
+				7A2EFD6F21CB2E0400A110D0 /* ExternalModelWrapper.swift in Sources */,
 				7A4FB03921C8BA4E0086888D /* DetailedPlayerStatisticsCollectionViewController.swift in Sources */,
+				7A2EFD6D21CB2DE700A110D0 /* ErrorMessage.swift in Sources */,
 				7A0C3CF121C759F900ECA80F /* PlayerStatisticsViewController.swift in Sources */,
 				7A0C3CEB21C5E7A100ECA80F /* UserDTO.swift in Sources */,
 				7A98987C21C583B30041AF75 /* ApplicationConstants.swift in Sources */,

@@ -13,17 +13,20 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var gamerIDTextBox: UITextField!
     @IBOutlet weak var platformPicker: UIPickerView!
     @IBOutlet weak var followedUsersPicker: UIPickerView!
-
+    @IBOutlet weak var actvityIndicator: UIActivityIndicatorView!
+    
     
     @IBOutlet weak var followPlayerButton: UIButton!
     @IBOutlet weak var showStatsButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     
     let platform = ["Playstation 4", "Xbox", "PC"]
-    var followedUsers = [PlatformUserDTO]()
     
+    var followedUsers = [PlatformUserDTO]()
     var currentUser: UserDTO?
     var playerPlatform: String = "Playstation 4"
+    var continueToDetailedPlayerStats = false
+    var toDetailPlayerStatisticsController = "toDetailPlayerStatisticsController"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +41,40 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
         setupPickers();
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        
+        guard let segueId = identifier else {
+            return false
+        }
+        
+        if segueId == self.toDetailPlayerStatisticsController && self.continueToDetailedPlayerStats != true {
+            return false
+        }
+        
+        return true
+    }
+    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.toDetailPlayerStatisticsController {
+            if let detailedPlayerStatsController = segue.destination as? DetailedPlayerStatisticsCollectionViewController {
+                detailedPlayerStatsController.currentUser = self.currentUser
+                detailedPlayerStatsController.followedUsers = self.followedUsers
+                self.actvityIndicator.stopAnimating()
+            }
+        }
+     }
+    
     @IBAction func unwindToPlayerStatistics(segue:UIStoryboardSegue) {}
+    
+    @IBAction func showStatsButtonPressed(_ sender: Any) {
+        actvityIndicator.startAnimating()
+        guard self.followedUsers.count > 0 else {
+            self.displayAlert(messageAlert: "Please follow at least one gamer")
+            return
+        }
+        continueToDetailedPlayerStats = true
+        self.performSegue(withIdentifier: self.toDetailPlayerStatisticsController, sender: self)
+    }
     
     @IBAction func followPlayerButtonPressed(_ sender: Any) {
         guard let currentUser = self.currentUser else {
@@ -49,6 +85,11 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
             return
         }
         
+        guard gamerTag.count > 0 else {
+            self.displayAlert(messageAlert: "Please provide a gamer tag")
+            return
+        }
+        
         let insertQuery = Queries().insertFollowedUserQuery(userId: "\(currentUser.userId)", gamerTag: gamerTag, platform: playerPlatform)
         
         let success = SQLLiteHelper().runInsertStatement(statement: insertQuery)
@@ -56,6 +97,7 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
         if success.success {
             
             guard let userId = self.currentUser?.userId else {
+                self.displayAlert(messageAlert: "Something bad happened")
                 return
             }
             
@@ -110,6 +152,13 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
         }
     }
     
+    fileprivate func displayAlert(messageAlert: String) {
+        let alert = UIAlertController(title: "\(messageAlert)", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
     fileprivate func retrievePlayersFollowByUser() {
         guard let user = currentUser else {
             return
@@ -143,14 +192,6 @@ class PlayerStatisticsViewController: UIViewController, UIPickerViewDelegate, UI
         widget.layer.masksToBounds = false
     }
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
